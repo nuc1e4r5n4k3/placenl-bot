@@ -4,7 +4,7 @@ import WebSocket from 'ws';
 
 const PREFIX = process.env.PREFIX || "simple"
 const VERSION_NUMBER = 11;
-const VERSION_POSTFIX = '-nuc1e4r5n4k3';
+const VERSION_POSTFIX = '-nuc';
 
 console.log(`PlaceNL headless client V${VERSION_NUMBER}${VERSION_POSTFIX}`);
 
