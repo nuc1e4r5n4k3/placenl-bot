@@ -4,8 +4,9 @@ import WebSocket from 'ws';
 
 const PREFIX = process.env.PREFIX || "simple"
 const VERSION_NUMBER = 11;
+const VERSION_POSTFIX = '-nuc1e4r5n4k3';
 
-console.log(`PlaceNL headless client V${VERSION_NUMBER}`);
+console.log(`PlaceNL headless client V${VERSION_NUMBER}${VERSION_POSTFIX}`);
 
 const args = process.argv.slice(2);
 
@@ -224,7 +225,7 @@ function connectSocket() {
     socket.onopen = function () {
         console.log('Verbonden met PlaceNL server!')
         socket.send(JSON.stringify({ type: 'getmap' }));
-        socket.send(JSON.stringify({ type: 'brand', brand: `nodeheadless-${PREFIX}-V${VERSION_NUMBER}` }));
+        socket.send(JSON.stringify({ type: 'brand', brand: `nodeheadless-${PREFIX}-V${VERSION_NUMBER}${VERSION_POSTFIX}` }));
     };
 
     socket.onmessage = async function (message) {
